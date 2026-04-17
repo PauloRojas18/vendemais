@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #f28900;
+  --primary-light: #818cf8;
+  --accent: #8b5cf6;
+  --accent-light: #a78bfa;
+
+  --bg-primary: #FFFFFF;
+  --bg-secundary: #e7e6e5;
+  --bg: #eeeef4;
+  --surface: #e4e4ec;
+  --surface-light: #f4f4fa;
+  --surface-border: #d0d0de;
+  --surface-card: rgba(244,244,250,0.92);
+  --surface-input: #f4f4fa;
+  --surface-input-disabled: rgba(228,228,236,0.8);
+
+  --text-primary: #f1f1f5;
+  --text-secondary: #0a0a10;
+  --text-muted: #70708a;
+  --text-faint: #aaaabc;
+
+  --card: #ffffff;
+  --card-foreground: #1a2b3c;
+  --foreground: #1a2b3c;
+
+  --border-subtle: rgba(0,0,0,0.07);
+  --border-card: rgba(99,102,241,0.18);
+
+  --scrollbar-track: #e4e4ec;
+  --scrollbar-thumb: #c4c4d4;
+
+  --nav-link-active-bg: rgba(99,102,241,0.1);
+  --nav-link-color: rgba(22,22,30,0.5);
+  --nav-bg-scrolled: rgba(238,238,244,0.96);
+  --nav-border: rgba(0,0,0,0.08);
+
+  /* Hero gradients */
+  --hero-grad-bottom: linear-gradient(to top, #eeeef4 0%, rgba(238,238,244,0.65) 5%, rgba(238, 238, 244, 0) 15%);
+
+  /* Card overlay */
+  --card-overlay: linear-gradient(to top, rgba(22,22,30,0.92) 0%, rgba(22,22,30,0.35) 50%, transparent 100%);
+  --card-hover-overlay: linear-gradient(to top, #eeeef4, transparent);
+
+  /* Episode / title card backgrounds */
+  --card-bg: #dcdce8;
+  --card-border: #c8c8d8;
+  --card-placeholder-bg: linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,246,0.08));
+  --card-placeholder-color: rgba(99,102,241,0.4);
+
+  /* Spotlight inactive overlay */
+  --spotlight-overlay: rgba(238,238,244,0.75);
+
+  /* Player border */
+  --player-border: #c8c8d8;
+
+  /* Season selector bg */
+  --season-bg: #dcdce8;
+  --season-border: #c8c8d8;
+  --season-count-bg: #dcdce8;
+  --season-count-border: #c8c8d8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-poppins: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s, color 0.3s;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Chrome, Edge e Safari */
+::-webkit-scrollbar {
+  display: none;
 }
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* IE/Edge antigo */
+body {
+  -ms-overflow-style: none;
+}
+
