@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 
 const FacebookIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -115,7 +116,7 @@ export default function Footer() {
           </span>
           <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontFamily: "'DM Mono', monospace" }}>
             Créditos do design ao <a href="https://www.figma.com/design/mBr4FOZ5kgnZjqy04dHxrX/Panto---Furniture-Landing-Page-Design--Community-?node-id=131-1408&p=f&t=kgHoqVNBQWL3XnbH-0" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', textDecoration: 'none' }} >
-                Figma Community
+                Figma Community <ExternalLink size={14} style={{ display: 'inline-block', verticalAlign: 'middle'}} />
             </a> 
           </span>
           <div style={{ display: 'flex', gap: 28 }}>
