@@ -5,9 +5,9 @@ import { usePathname } from 'next/navigation'
 import { Check, ChevronDown } from 'lucide-react'
 
 const NAV_LINKS = [
-  { href: '/Shop', label: 'Loja' },
-  { href: '/Sobre', label: 'Sobre-Nós' },
-  { href: '/Contato', label: 'Contate-Nos' },
+  { href: '/Shop', label: 'Branding' },
+  { href: '/Sobre', label: 'Campanhas' },
+  { href: '/Contato', label: 'Email Marketing' },
 ]
 
 export default function Navbar() {
@@ -52,7 +52,7 @@ export default function Navbar() {
       borderBottom: solid ? '1px solid var(--nav-border)' : 'none',
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 0 }}>
-        <Link href="/home" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none', marginRight: 24 }}>
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none', marginRight: 24 }}>
           <span style={{ fontWeight: 700, fontSize: 17, color: 'var(--text-primary)', letterSpacing: -0.3 }}>VendeMais</span>
         </Link>
 
@@ -81,7 +81,7 @@ export default function Navbar() {
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4" />
                     </svg>
                     <span className="flex-1">
-                    {form.opcao2 || "Selecione uma opção..."}
+                    {form.opcao2 || "Serviços"}
                     </span>
                     <ChevronDown
                     className="h-4 w-4 flex-shrink-0 transition-transform duration-200"

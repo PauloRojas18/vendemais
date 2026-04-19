@@ -1,8 +1,9 @@
 'use client';
 
 import Image from "next/image";
-import { ArrowRight, Truck, ShieldCheck, Headphones } from "lucide-react";
+import { ArrowRight, Truck, ShieldCheck, Headphones, User } from "lucide-react";
 import { useState } from "react";
+
 
 
 const sec_info = [
@@ -24,14 +25,14 @@ const sec_info = [
 ]
 
 const produtosCat = [
-  { name: 'Console', label: 'Consoles' },
+  { name: 'Cama', label: 'Camas' },
   { name: 'Mesas', label: 'Mesas' },
   { name: 'Sofá', label: 'Sofás' },
   { name: 'Cadeira', label: 'Cadeiras' },
 ]
 
 const produtos = [
-  { id: 1, name: 'PlayStation 5', price: 'R$ 3.999,90', category: 'Console', image: '/produtos/ps5.png' },
+  { id: 1, name: 'PlayStation 5', price: 'R$ 3.999,90', category: 'Cama', image: '/produtos/ps5.png' },
   { id: 2, name: 'Cadeira Gamer Pro', price: 'R$ 1.249,90', category: 'Cadeira', image: '/produtos/cadeira1.png' },
   { id: 3, name: 'Cadeira Escritório Slim', price: 'R$ 749,90', category: 'Cadeira', image: '/produtos/cadeira2.png' },
   { id: 4, name: 'Cadeira Ergonômica', price: 'R$ 999,90', category: 'Cadeira', image: '/produtos/cadeira3.png' },
@@ -40,9 +41,39 @@ const produtos = [
   { id: 7, name: 'Sofá 3 Lugares', price: 'R$ 2.199,90', category: 'Sofá', image: '/produtos/ps5.png' },
 ]
 
+const feedbacks = [
+  {
+    id: 1,
+    name: 'Bang Upin',
+    role: 'Pedagang Asongan',
+    avatar: <User size={14}/>,
+    descricao: 'Terimakasih banyak, kini ruanganku menjadi lebih mewah dan terlihat mahal',
+    image: '/unsplash__HqHX3LBN18.png',
+    estrelas: 4,
+  },
+  {
+    id: 2,
+    name: 'Ibuk Sukijan',
+    role: 'Ibu Rumah Tangga',
+    avatar: <User size={14}/>,
+    descricao: 'Makasih Panto, aku sekarang berasa tinggal di apartment karena barang-barang yang terlihat mewah',
+    image: '/unsplash_h2_3dL9yLpU.png',
+    estrelas: 4,
+  },
+  {
+    id: 3,
+    name: 'João Silva',
+    role: 'Designer de Interiores',
+    avatar: <User size={14}/>,
+    descricao: 'Produtos de altíssima qualidade, entrega rápida e atendimento excelente. Super recomendo!',
+    image: '/unsplash_JaXs8Tk5Iww.png',
+    estrelas: 5,
+  },
+]
+
 
 export default function Home() {
-  const [categoria, setCategoria] = useState('Console');
+  const [categoria, setCategoria] = useState('Cama');
 
   const filtered = produtos.filter(p => p.category === categoria);
 
@@ -302,7 +333,7 @@ export default function Home() {
               position: 'absolute',
               top: 40,
               left: 0,
-              background: 'var(--secondary)',
+              background: 'var(--bg-secundary)',
               borderRadius: 12,
               height: 340,
               width: 300,
@@ -313,13 +344,21 @@ export default function Home() {
               position: 'absolute',
               top: 0,
               left: 80,
-              background: 'var(--secondary)',
+              background: 'var(--bg-secundary)',
               borderRadius: 12,
               height: 300,
               width: 340,
               zIndex: 10,
               boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
             }} />
+
+            <Image
+              src="/Rectangle 1446.png"
+              alt="Sobre nós"
+              width={400}
+              height={400}
+              style={{ objectFit: 'cover', borderRadius: 12, zIndex: 15, position: 'absolute', top: 40, left: 20 }}
+            />
           </div>
 
           <div style={{ maxWidth: 500 }}>
@@ -400,7 +439,7 @@ export default function Home() {
               position: 'absolute',
               top: 40,
               left: 0,
-              background: 'var(--secondary)',
+              background: 'var(--bg-secundary)',
               borderRadius: 12,
               height: 340,
               width: 300,
@@ -411,15 +450,174 @@ export default function Home() {
               position: 'absolute',
               top: 0,
               left: 80,
-              background: 'var(--secondary)',
+              background: 'var(--bg-secundary)',
               borderRadius: 12,
               height: 300,
               width: 340,
               zIndex: 10,
               boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
             }} />
+            <div style={{
+              position: 'relative',
+              top: 40,
+              left: 40,
+              borderRadius: 12,
+              height: 360,
+              width: 340,
+              zIndex: 15,
+            }} >
+              <Image
+                src="/Rectangle 1446 (1).png"
+                alt="Sobre nós"
+                width={400}
+                height={400}
+                style={{ objectFit: 'cover', borderRadius: 12, zIndex: 15, position: 'absolute', top: -20, left: 40 }}
+              />
+              <Image
+                src="/Group 48095419.png"
+                alt="Sobre nós"
+                width={160}
+                height={160}
+                style={{ objectFit: 'cover', borderRadius: 12, zIndex: 15, position: 'absolute', top: 130, left: -130 }}
+              />
+              <Image
+                src="/Group 48095417.png"
+                alt="Sobre nós"
+                width={160}
+                height={160}
+                style={{ objectFit: 'cover', borderRadius: 12, zIndex: 15, position: 'absolute', top: -18, left: -130 }}
+              />
+              </div>
           </div>
         </div>
+        </section>
+
+        <section
+          style={{
+            minWidth: 1280,
+            margin: '0 auto',
+            padding: '3.5rem 5rem',
+            background: 'var(--bg-primary)',
+          }}
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 40, marginTop: 120, marginBottom: 200 }}>
+            {/* Título */}
+            <div style={{ textAlign: 'center', lineHeight: 1.2 }}>
+              <h2 style={{ fontSize: '1rem', fontWeight: 'bold', color: 'var(--primary)' }}>
+                Testemunhos
+              </h2>
+              <h2 style={{ fontSize: '2.3rem', fontWeight: 'bold', color: 'var(--text-secondary)' }}>
+                Nossos Feedbacks
+              </h2>
+            </div>
+
+            {/* Cards */}
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: 30 }}>
+              {feedbacks.map((f) => (
+                <div
+                  key={f.id}
+                  style={{
+                    width: 330,
+                    height: 450,
+                    borderRadius: 20,
+                    overflow: 'hidden',
+                    position: 'relative',
+                    flexShrink: 0,
+                    background: `url(${f.image})`,
+                    boxShadow: '0px 20px 25px rgba(242,137,0,0.3)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}
+                >
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: 10,
+                      left: '6%',
+                      width: '88%',
+                      background: 'white',
+                      borderRadius: '20px 20px 14px 14px',
+                      padding: '40px 20px 24px',
+                      boxShadow: '0 -8px 40px rgba(0,0,0,0.1)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      gap: 6,
+                      textAlign: 'center',
+                    }}
+                  >
+                    {/* Avatar — foto real com borda branca */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: -20,
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        background: 'white',
+                        width: 46,
+                        height: 46,
+                        borderRadius: '50%',
+                        overflow: 'hidden',
+                        border: '4px solid white',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <div style={{
+                        width: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        background: '#f0f0f0',
+                        color: '#888',
+                        borderRadius: '50%',
+                      }}>
+                        {f.avatar}
+                      </div>
+                    </div>
+
+                    {/* Nome */}
+                    <span style={{ fontSize: '1.1rem', fontWeight: 700, color: '#111' }}>
+                      {f.name}
+                    </span>
+
+                    {/* Ocupação */}
+                    <span style={{ fontSize: '0.82rem', color: '#999' }}>
+                      {f.role}
+                    </span>
+
+                    {/* Depoimento */}
+                    <p
+                      style={{
+                        fontSize: 12,
+                        color: '#555',
+                        fontFamily: "'DM Mono', monospace",
+                        lineHeight: 1,
+                        marginTop: 6,
+                      }}
+                    >
+                      {f.descricao}
+                    </p>
+
+                    {/* Estrelas dinâmicas */}
+                    <div style={{ display: 'flex', gap: 4, marginTop: 6 }}>
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <span
+                          key={i}
+                          style={{
+                            fontSize: 20,
+                            color: i < f.estrelas ? '#f59e0b' : '#e5e7eb',
+                          }}
+                        >
+                          ★
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
     </div>
   );
