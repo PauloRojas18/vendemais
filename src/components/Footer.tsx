@@ -29,10 +29,10 @@ const furniture = ['Sofás', 'Cadeiras', 'Mesas'];
 export default function Footer() {
   return (
     <footer style={{ background: 'var(--bg-secundary)', width: '100%' }}>
-      <div style={{ minWidth: 1280, margin: '0 auto', padding: '4rem 5rem 2rem' }}>
+      <div className="footer-inner">
 
         {/* Topo */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', gap: 48, marginBottom: 48 }}>
+        <div className="footer-top">
 
           {/* Marca */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16, maxWidth: 340 }}>
@@ -40,24 +40,18 @@ export default function Footer() {
               VendeMais
             </span>
             <p style={{
-              fontSize: '0.95rem',
-              lineHeight: 1.7,
-              color: 'var(--text-muted)',
-              fontFamily: "'DM Mono', monospace",
-              margin: 0,
+              fontSize: '0.95rem', lineHeight: 1.7,
+              color: 'var(--text-muted)', fontFamily: "'DM Mono', monospace", margin: 0,
             }}>
               A vantagem de escolher a VendeMais é ter conforto, qualidade e design moderno — entregues até você em todo o Brasil.
             </p>
           </div>
 
           {/* Colunas de links */}
-          <div style={{ display: 'flex', gap: 64 }}>
+          <div className="footer-link-columns">
 
-            {/* Serviços */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-              <span style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--primary)' }}>
-                Serviços
-              </span>
+              <span style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--primary)' }}>Serviços</span>
               <nav style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {services.map((s) => (
                   <Link key={s} href="#" style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', textDecoration: 'none' }}>
@@ -67,11 +61,8 @@ export default function Footer() {
               </nav>
             </div>
 
-            {/* Móveis */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-              <span style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--primary)' }}>
-                Móveis
-              </span>
+              <span style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--primary)' }}>Móveis</span>
               <nav style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {furniture.map((f) => (
                   <Link key={f} href="#" style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', textDecoration: 'none' }}>
@@ -81,11 +72,8 @@ export default function Footer() {
               </nav>
             </div>
 
-            {/* Redes sociais */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-              <span style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--primary)' }}>
-                Siga-nos
-              </span>
+              <span style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--primary)' }}>Siga-nos</span>
               <nav style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {[
                   { icon: <FacebookIcon />, label: 'Facebook' },
@@ -110,16 +98,21 @@ export default function Footer() {
         <hr style={{ border: 'none', borderTop: '1px solid var(--border-subtle)', margin: '0 0 20px' }} />
 
         {/* Bottom bar */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className="footer-bottom">
           <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontFamily: "'DM Mono', monospace" }}>
             Copyright © 2025 VendeMais
           </span>
           <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontFamily: "'DM Mono', monospace" }}>
-            Créditos do design ao <a href="https://www.figma.com/design/mBr4FOZ5kgnZjqy04dHxrX/Panto---Furniture-Landing-Page-Design--Community-?node-id=131-1408&p=f&t=kgHoqVNBQWL3XnbH-0" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', textDecoration: 'none' }} >
-                Figma Community <ExternalLink size={14} style={{ display: 'inline-block', verticalAlign: 'middle'}} />
-            </a> 
+            Créditos ao{' '}
+            
+            <a  href="https://www.figma.com/design/mBr4FOZ5kgnZjqy04dHxrX/Panto---Furniture-Landing-Page-Design--Community-?node-id=131-1408&p=f&t=kgHoqVNBQWL3XnbH-0"
+              target="_blank" rel="noopener noreferrer"
+              style={{ color: 'var(--primary)', textDecoration: 'none' }}
+            >
+              Figma Community <ExternalLink size={14} style={{ display: 'inline-block', verticalAlign: 'middle' }} />
+            </a>
           </span>
-          <div style={{ display: 'flex', gap: 28 }}>
+          <div className="footer-bottom-links" style={{ display: 'flex', gap: 28 }}>
             {['Termos de Uso', 'Política de Privacidade'].map((item) => (
               <Link key={item} href="#" style={{
                 fontSize: '0.85rem', color: 'var(--text-secondary)',
